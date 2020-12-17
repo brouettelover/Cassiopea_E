@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+    color: silver;
+    text-align: center;
+}
+#Button_E{
+    position: relative;
+    top: 60%;
+    height: 150px;
+    width: 450px;
+}
+.colorized{
+    background-color: red;
+}
