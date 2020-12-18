@@ -1,6 +1,12 @@
 $(document).ready(function(event) {
-    $(".Box_starter").focus(function(){
-        $(".Box_starter").html("Press E");
+        $(".Box_starter").one('click',function(){
+            var end = 0;
+            var fiveSeconds = 5,
+            display = $('.Box_starter');
+            console.log(startTimer(fiveSeconds, display));
+            $(".Box_starter").html("Ready ?");                  
+            $(".Box_starter").css('background-image','none');
+
     });
     $(".Box_starter").on('keypress',function(event){
         E_unicode = event.which;
@@ -13,5 +19,17 @@ $(document).ready(function(event) {
             }
         }
     });
+    function startTimer(duration, display) {
+        var timer = duration, seconds;
+        x = setInterval(function () {
+            seconds = parseInt(timer % 60);
+            display.text(seconds);   
+            if (--timer <= 0) {
+                timer = duration;
+                return timer;
+            }
+        }, 1000);
+        return x;
+    }
 
 });
