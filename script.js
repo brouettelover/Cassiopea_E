@@ -1,11 +1,11 @@
 $(document).ready(function(event) {
         $(".Box_starter").one('click',function(){
-            var end = 0;
-            var fiveSeconds = 5,
+            var fiveSeconds = 3;
             display = $('.Box_starter');
             startTimer(fiveSeconds, display);
-            $(".Box_starter").html("Ready ?");                  
-            $(".Box_starter").css('background-image','none');
+            //Remove the box image
+            display.html("Ready ?");                  
+            display.css('background-image','none');
 
     });
 
@@ -19,20 +19,23 @@ $(document).ready(function(event) {
             }
             if(seconds == 0){
                 clearInterval(x);
-                display.text("")
-                $(".Box_starter").on('keypress',function(event){
-                    E_unicode = event.which;
+                display.text("Press e");
+                display.addClass("green");
+                display.on('keypress',function(event){
+                    E_unicode = event.which; //which est l'unicode de la touche e
                     if(E_unicode === 101){
-                        if( $(".Box_starter").hasClass("colorized")  ){
-                            $(".Box_starter").removeClass("colorized"); 
+                        display.text("wait");
+                        if( display.hasClass("colorized")  ){
+                            display.removeClass("colorized"); 
                         }
                         else{
-                            $(".Box_starter").addClass("colorized");
+                            display.addClass("colorized");
+                            display.removeClass("green");
                         }
                     }
                 });            
             }
-        }, 1000);
+        }, 1000); // 1000 miliseconds
     }
 
 });

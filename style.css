@@ -28,7 +28,7 @@ h1{
     font-size: 10mm;
     border-style: solid;
     border-radius: 30px;
-    border-color: blue;
+    border-color: wheat;
     background-image: url("bg-cassio.jpg");
     background-size: 800px;
 }
@@ -42,6 +42,9 @@ h1{
 }
 .colorized{
     background-color: red;
+}
+.green{
+    background-color: green;
 }
 
 /* Couldown AH
